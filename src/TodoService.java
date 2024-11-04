@@ -3,20 +3,19 @@ import java.util.List;
 
 public class TodoService {
 
-    List<Todo> todoList;
+    static List<Todo> todoList;
 
     public TodoService() {
         this.todoList = new ArrayList<>();
     }
 
-    public boolean createTodo(String todoName){
-        boolean add = false;
+    public static void createTodo(String todoName){
+
         Todo todo = new Todo(todoName);
-        add = todoList.add(todo);
-        return add;
+
     }
 
-    public void updateTodo(String todoId, String newTodoName){
+    public static void updateTodo(String todoId, String newTodoName){
         for (Todo todo : todoList) {
             if (todo.getId().equals(todoId)){
                 todo.setTodoName(newTodoName);
@@ -24,7 +23,7 @@ public class TodoService {
         }
     }
 
-    public boolean deleteTodo(String todoId) {
+    public static boolean deleteTodo(String todoId) {
         boolean remove = false;
         for (Todo todo : todoList) {
             if (todo.getId().equals(todoId)) {
@@ -34,7 +33,7 @@ public class TodoService {
         return remove;
     }
 
-    public List<Todo> getTodo(){
+    public static List<Todo> getTodo(){
         return todoList;
     }
 }
