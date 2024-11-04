@@ -9,9 +9,9 @@ public class TodoService {
         this.todoList = new ArrayList<>();
     }
 
-    public static void createTodo(String todoName){
+    public static boolean createTodo(String todoName){
         Todo todo = new Todo(todoName);
-        todoList.add(todo);
+        return todoList.add(todo);
     }
 
     public static void updateTodo(String todoId, String newTodoName){

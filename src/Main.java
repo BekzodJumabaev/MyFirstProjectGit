@@ -27,13 +27,13 @@ public class Main {
                     TodoService todoService = new TodoService();
                     System.out.println("Enter name.");
                     String todoName = strScanner.nextLine();
-                     todoService.createTodo(todoName);
-                    System.out.println("Todo create.");
-//                    if (todo){
-//                        System.out.println("Todo yaratildi:");
-//                    }else {
-//                        System.out.println("Todo yaratilmadi:");
-//                    }
+                    boolean todo = todoService.createTodo(todoName);
+//                    System.out.println("Todo create.");
+                    if (todo){
+                        System.out.println("Todo yaratildi:");
+                    }else {
+                        System.out.println("Todo yaratilmadi:");
+                    }
                 }
                 case 2 -> {
                     List<Todo> todo = TodoService.getTodo();
